@@ -1,0 +1,4 @@
+# clojure 2 space indent
+[*.clj]
+indent_style = space
+indent_size = 2
