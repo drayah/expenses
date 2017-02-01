@@ -2,13 +2,13 @@
   (:require [clojure.java.io :as cio]
             [clojure.string :as str]))
 
-(defn real-return) 
+(defn real-return
   "Calculate the real rate of return given a nominal and inflation rate"
   [nominal inflation]
   (let [nominal (/ nominal 100)
         inflation (/ inflation 100)
         real-rate (- (/ (+ 1 nominal) (+ 1 inflation)) 1)]
-    (* real-rate 100))
+    (* real-rate 100)))
 
 (defn keyword-for-index 
   "Returns a keyword for index"
