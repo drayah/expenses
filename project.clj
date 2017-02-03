@@ -3,4 +3,6 @@
   :url "https://github.com/drayah/expenses"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.8.0"]])
+  :dependencies [[org.clojure/clojure "1.8.0"]]
+  :plugins [[lein-expectations "0.0.8"]]
+  :profiles {:dev {:dependencies [[expectations "2.1.9"]]}})

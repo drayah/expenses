@@ -1,4 +1,4 @@
-(ns finance.core 
+(ns expenses.core 
   (:require [clojure.java.io :as cio]
             [clojure.string :as str]))
 
@@ -53,9 +53,3 @@
   "Transform a seq of csv strings to a seq of expenses"
   [csv]
   (map line->expense csv))
-
-(defn read-expense-csv
-  "Read lines from a csv and return as seq"
-  [file]
-  (with-open [reader (cio/reader file)]
-    (doall (line-seq reader))))
