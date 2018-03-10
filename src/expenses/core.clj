@@ -1,4 +1,4 @@
-(ns expenses.core 
+(ns expenses.core
   (:require [clojure.java.io :as cio]
             [clojure.string :as str]))
 
@@ -10,7 +10,7 @@
         real-rate (- (/ (+ 1 nominal) (+ 1 inflation)) 1)]
     (* real-rate 100)))
 
-(defn keyword-for-index 
+(defn keyword-for-index
   "Returns a keyword for index"
   [index]
   (case index
@@ -29,14 +29,14 @@
   (case keyword
     :amount (if (empty? value) 0M (bigdec value))
             value))
-    
+
 (defn build-map
   "Given a seq of strings build an expense map"
   [strings]
   (loop [current strings
          index 0
          map {}]
-    (if (empty? current) 
+    (if (empty? current)
       map
       (let [keyword (keyword-for-index index)
             value (parse-value keyword (first current))
