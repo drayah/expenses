@@ -1,4 +1,4 @@
-(ns expenses.core
+(ns co.popado.finance.domain.expenses
   (:require [clojure.java.io :as cio]
             [clojure.string :as str]))
 

@@ -1,4 +1,4 @@
-(ns expenses.io
+(ns co.popado.finance.io
   (:require [clojure.java.io :as cio]))
 
 (defn read-expense-csv
