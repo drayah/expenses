@@ -1,6 +1,7 @@
-# expenses
+# wallchart
 
-A personal finances hobby project
+Experiments with personal finances.  
+Implementing ideas from _Your Money or Your Life_
 
 ## Installation
 
@@ -15,15 +16,3 @@ FIXME: explanation
 ## Options
 
 FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
