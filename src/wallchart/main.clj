@@ -1,4 +1,4 @@
-(ns popado.wallchart.main
+(ns wallchart.main
   (:gen-class))
 
 (defn -main [& args]

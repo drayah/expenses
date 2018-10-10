@@ -6,7 +6,7 @@
             :url "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.9.0"]]
   :plugins [[lein-cloverage "1.0.11"]]
-  :main ^:skip-aot popado.wallchart.main
+  :main ^:skip-aot wallchart.main
   :uberjar-name "wallchart-api.jar"
   :target-path "target/%s"
   :profiles {:dev {:dependencies [[midje "1.9.2"]
