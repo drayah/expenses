@@ -1,4 +1,4 @@
-(ns wallchart.io
+(ns wallchart.expenses.utils.io
   (:require [clojure.java.io :as cio]))
 
 (defn read-expense-csv
