@@ -1,4 +1,4 @@
-(defproject expenses "0.1.0-SNAPSHOT"
+(defproject wallchart "0.1.0-SNAPSHOT"
   :description "Experiments with personal finances"
   :url "https://github.com/drayah/wallchart"
   :min-lein-version "2.8.1"

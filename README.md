@@ -1,7 +1,6 @@
 # wallchart
 
-Experiments with personal finances.  
-Implementing ideas from _Your Money or Your Life_
+Experiments with personal finances. Implementing ideas from _Your Money or Your Life_
 
 ## Installation
 
