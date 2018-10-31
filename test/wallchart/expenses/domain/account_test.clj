@@ -12,11 +12,14 @@
 (facts "when creating a new transaction"
   (fact "it returns new transaction data"
     (let [some-day (t/date-time 2018 11 01)]
-      (sut/create-transaction some-day 100M :restaurant) => (just {:id uuid?
-                                                                   :date some-day
-                                                                   :amount 100M
-                                                                   :category :restaurant}))))
+      (sut/create-transaction some-day -100M :restaurant) => (just {:id uuid?
+                                                                    :date some-day
+                                                                    :amount -100M
+                                                                    :category :restaurant}))))
 
 (facts "when adding a transaction to an account"
   (fact "it adds transaction data to the account"
-    (let [test-account (sut/create-account "some account")])))
+    (let [test-account (sut/create-account "some account")
+          test-transaction (sut/create-transaction (t/date-time 2018 01 01) -50M :groceries)
+          updated-account (sut/add-transaction test-account test-transaction)]
+      (:transactions updated-account) => [])))
