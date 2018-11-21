@@ -15,4 +15,7 @@
    :amount amount
    :category category})
 
-(defn add-transaction [account transaction])
+(defn add-transaction [account transaction]
+  (let [txs (:transactions account)]
+    (->> (conj txs transaction)
+         (assoc account :transactions))))

@@ -22,4 +22,4 @@
     (let [test-account (sut/create-account "some account")
           test-transaction (sut/create-transaction (t/date-time 2018 01 01) -50M :groceries)
           updated-account (sut/add-transaction test-account test-transaction)]
-      (:transactions updated-account) => [])))
+      (:transactions updated-account) => [test-transaction])))
