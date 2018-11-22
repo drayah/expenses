@@ -1,8 +1,11 @@
 (ns wallchart.expenses.utils.io
-  (:require [clojure.java.io :as cio]))
+  (:require [clojure.java.io :as io]
+            [clojure.data.csv :as csv]))
 
-(defn read-expense-csv
+(defn read-expenses-csv
   "Read lines from a csv and return a seq"
-  [file]
-  (with-open [reader (cio/reader file)]
-    (doall (line-seq reader))))
+  [csv-path]
+  (with-open [reader (io/reader csv-path)]
+    (->> (csv/read-csv reader :separator \;)
+         (drop 1)
+         (mapv identity))))
