@@ -2,10 +2,12 @@
   (:require [clojure.java.io :as io]
             [clojure.data.csv :as csv]))
 
-(defn read-expenses-csv!
-  "Read lines from a csv and return a seq"
-  [csv-path]
-  (with-open [reader (io/reader csv-path)]
-    (->> (csv/read-csv reader :separator \;)
-         (drop 1)
-         (mapv identity))))
+(defn read-csv!
+  "Reads csv from given path, given optional map of parameters e.g {:separator \\,}"
+  [csv-path & params]
+  (let [[options]                              params
+        {:keys [separator] :or {separator \;}} options]
+    (with-open [reader (io/reader csv-path)]
+      (->> (csv/read-csv reader :separator separator)
+          (drop 1) ;header
+          (mapv identity)))))
