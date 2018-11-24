@@ -1,21 +1,17 @@
-(ns wallchart.expenses.domain.account
-  (:import [java.util UUID]))
+(ns wallchart.expenses.domain.account)
 
-(defn- random-uuid []
-  (UUID/randomUUID))
-
-(defn create-account [name]
-  {:id           (random-uuid)
+(defn create-account [generate-id name]
+  {:id           (generate-id)
    :name         name
    :transactions []})
 
-(defn create-transaction [date amount category]
-  {:id       (random-uuid)
+(defn create-transaction [generate-id date amount category]
+  {:id       (generate-id)
    :date     date
    :amount   amount
    :category category})
 
 (defn add-transaction [account transaction]
-  (let [txs (:transactions account)]
-    (->> (conj txs transaction)
+  (let [transactions (:transactions account)]
+    (->> (conj transactions transaction)
          (assoc account :transactions))))
